@@ -14,7 +14,7 @@ class StoryController extends Controller
      */
     public function index()
     {
-        return view('stories');
+        return view('stories.index');
     }
 
     /**
