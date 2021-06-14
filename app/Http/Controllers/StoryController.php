@@ -14,7 +14,6 @@ class StoryController extends Controller
      */
     public function index()
     {
-        $this->checkUser();
         return view('stories');
     }
 
