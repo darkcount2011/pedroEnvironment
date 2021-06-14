@@ -15,5 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');
 Route::middleware('auth')->resource('dashboard', \App\Http\Controllers\DashboardController::class);
+Route::middleware('auth')->resource('stories', \App\Http\Controllers\StoryController::class);
+
 
 require __DIR__.'/auth.php';
