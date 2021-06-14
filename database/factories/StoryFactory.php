@@ -21,8 +21,7 @@ class StoryFactory extends Factory
      */
     public function definition()
     {
-
-             return [
+        return [
                  'name' => $this->faker->text(25),
                  'text' => $this->faker->text()
              ];
