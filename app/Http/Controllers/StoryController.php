@@ -96,7 +96,7 @@ class StoryController extends Controller
     {
         return $request->validate([
             'name' => ['required', 'string'],
-            'text' => ['required', 'string'],
+//            'text' => ['required', 'string'],
         ]);
     }
 }
