@@ -13,12 +13,12 @@
 <div class="container mt-5 pt-5">
     <div class="text-center">
         <i class="far fa-frown fa-10x"></i>
-        <h1>UH-OH</h1>
+        <h1>UH-OH..</h1>
         <h2>404 -The page you requested could not be found.</h2>
         <p>This can be caused by the page being deleted, renamed or temporarily disabled.</p>
 
-            <div class=""><a href="{{route('dashboard.index')}}" class="btn m-1 btn-primary">Dashboard</a></div>
-            <a onclick="window.history.back()" class="btn m-1 btn-primary">Return</a>
+            <div class=""><a href="{{route('dashboard.index')}}" class="btn m-1 btn-outline-primary">Dashboard</a></div>
+            <a onclick="window.history.back()" class="btn m-1 btn-outline-success">Return</a>
 
 
 
