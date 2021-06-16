@@ -14,4 +14,3 @@ class Story extends Model
 
 
 }
-git
