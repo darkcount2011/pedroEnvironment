@@ -22,7 +22,7 @@ class StoryFactory extends Factory
     public function definition()
     {
         return [
-                 'name' => $this->faker->text(25),
+                 'name' => $this->faker->title,
                  'text' => $this->faker->text()
              ];
 

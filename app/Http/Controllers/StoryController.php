@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Story;
+use http\Env\Response;
 use Illuminate\Http\Request;
+
 
 class StoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View
      */
     public function index()
     {
@@ -18,6 +20,17 @@ class StoryController extends Controller
         return view('stories.index', ['stories' => $stories]);
     }
 
+    /**
+     * Sorts name of stories that have a name like requested input and return as json repsonse.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function search(Request $request){
+
+        $data = Story::where('name','LIKE','%'.$request->keyword.'%')->get();
+        return response()->json($data);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -80,11 +93,11 @@ class StoryController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Story  $story
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        Story::destroy($id);
+        Story::whereIn('id', $request->id)->delete();
         return redirect(route('stories.index'));
     }
     /**
@@ -96,7 +109,7 @@ class StoryController extends Controller
     {
         return $request->validate([
             'name' => ['required', 'string'],
-//            'text' => ['required', 'string'],
+            'text' => ['required', 'string'],
         ]);
     }
 }

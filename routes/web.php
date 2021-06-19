@@ -16,6 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');
 Route::middleware('auth')->resource('dashboard', \App\Http\Controllers\DashboardController::class);
 Route::middleware('auth')->resource('stories', \App\Http\Controllers\StoryController::class);
+Route::get('/livesearch', [\App\Http\Controllers\StoryController::class, 'search']);
 
 
 require __DIR__.'/auth.php';
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
