@@ -18,9 +18,6 @@
                             <a v-bind:href="'/stories/' + story.id" class="btn m-1 btn-primary">show</a>
                             <a v-bind:href="'/stories/' + story.id + '/edit'" class="btn btn-primary">edit</a>
                         </div>
-
-
-
                     </div>
                 </div>
             </div>

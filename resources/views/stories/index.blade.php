@@ -14,7 +14,7 @@
 
                     <a type="button" class="btn btn-block btn-primary" href="{{route('stories.create')}}">make
                         a beautiful story</a>
-                                        <autocomplete-component> </autocomplete-component>
+                    <autocomplete-component> </autocomplete-component>
 
                     </div>
                 </div>
